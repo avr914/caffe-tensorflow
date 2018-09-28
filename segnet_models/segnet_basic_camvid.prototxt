@@ -44,16 +44,18 @@ layer {
   bottom: "conv1"
   top: "conv1"
   name: "conv1_bn"
-  type: "BatchNorm"
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  }
+  type: "BN"
+  bn_param {
+	bn_mode: INFERENCE
+	scale_filler {
+	  type: "constant"
+	  value: 1
+	}
+	shift_filler {
+	  type: "constant"
+	  value: 0.001
+	}
+ }
 }
 layer {
   name: "relu1"
@@ -102,16 +104,18 @@ layer {
   bottom: "conv2"
   top: "conv2"
   name: "conv2_bn"
-  type: "BatchNorm"
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  }
+  type: "BN"
+  bn_param {
+	bn_mode: INFERENCE
+	scale_filler {
+	  type: "constant"
+	  value: 1
+	}
+	shift_filler {
+	  type: "constant"
+	  value: 0.001
+	}
+ }
 }
 layer {
   name: "relu2"
@@ -160,16 +164,18 @@ layer {
   bottom: "conv3"
   top: "conv3"
   name: "conv3_bn"
-  type: "BatchNorm"
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  }
+  type: "BN"
+  bn_param {
+	bn_mode: INFERENCE
+	scale_filler {
+	  type: "constant"
+	  value: 1
+	}
+	shift_filler {
+	  type: "constant"
+	  value: 0.001
+	}
+ }
 }
 layer {
   name: "relu3"
@@ -218,16 +224,18 @@ layer {
   bottom: "conv4"
   top: "conv4"
   name: "conv4_bn"
-  type: "BatchNorm"
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  }
+  type: "BN"
+  bn_param {
+	bn_mode: INFERENCE
+	scale_filler {
+	  type: "constant"
+	  value: 1
+	}
+	shift_filler {
+	  type: "constant"
+	  value: 0.001
+	}
+ }
 }
 layer {
   name: "relu4"
@@ -287,16 +295,18 @@ layer {
   bottom: "conv_decode4"
   top: "conv_decode4"
   name: "conv_decode4_bn"
-  type: "BatchNorm"
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  }
+  type: "BN"
+  bn_param {
+	bn_mode: INFERENCE
+	scale_filler {
+	  type: "constant"
+	  value: 1
+	}
+	shift_filler {
+	  type: "constant"
+	  value: 0.001
+	}
+ }
 }
 layer {
   name: "upsample3"
@@ -337,16 +347,18 @@ layer {
   bottom: "conv_decode3"
   top: "conv_decode3"
   name: "conv_decode3_bn"
-  type: "BatchNorm"
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  }
+  type: "BN"
+  bn_param {
+	bn_mode: INFERENCE
+	scale_filler {
+	  type: "constant"
+	  value: 1
+	}
+	shift_filler {
+	  type: "constant"
+	  value: 0.001
+	}
+ }
 }
 layer {
   name: "upsample2"
@@ -387,16 +399,18 @@ layer {
   bottom: "conv_decode2"
   top: "conv_decode2"
   name: "conv_decode2_bn"
-  type: "BatchNorm"
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  }
+  type: "BN"
+  bn_param {
+	bn_mode: INFERENCE
+	scale_filler {
+	  type: "constant"
+	  value: 1
+	}
+	shift_filler {
+	  type: "constant"
+	  value: 0.001
+	}
+ }
 }
 layer {
   name: "upsample1"
@@ -437,16 +451,18 @@ layer {
   bottom: "conv_decode1"
   top: "conv_decode1"
   name: "conv_decode1_bn"
-  type: "BatchNorm"
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  } 
-  param {
-    lr_mult: 0
-  }
+  type: "BN"
+  bn_param {
+	bn_mode: INFERENCE
+	scale_filler {
+	  type: "constant"
+	  value: 1
+	}
+	shift_filler {
+	  type: "constant"
+	  value: 0.001
+	}
+ }
 }
 layer {
   name: "dense_softmax_inner_prod"
