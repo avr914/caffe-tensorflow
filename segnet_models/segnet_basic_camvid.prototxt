@@ -44,18 +44,16 @@ layer {
   bottom: "conv1"
   top: "conv1"
   name: "conv1_bn"
-  type: "BN"
-  bn_param {
-	bn_mode: INFERENCE
-	scale_filler {
-	  type: "constant"
-	  value: 1
-	}
-	shift_filler {
-	  type: "constant"
-	  value: 0.001
-	}
- }
+  type: "BatchNorm"
+  param {
+    lr_mult: 0
+  } 
+  param {
+    lr_mult: 0
+  } 
+  param {
+    lr_mult: 0
+  }
 }
 layer {
   name: "relu1"
