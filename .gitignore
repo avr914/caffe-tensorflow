@@ -8,3 +8,8 @@
 # Python cache
 *.pyc
 
+# IDEA project files.
+.idea/
+
+# Generated files.
+*.npy

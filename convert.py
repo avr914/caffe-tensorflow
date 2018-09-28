@@ -29,10 +29,18 @@ def convert(def_path, caffemodel_path, data_output_path, code_output_path, phase
         if caffemodel_path is not None:
             data = transformer.transform_data()
             print_stderr('Saving data...')
+            # create directory if not existing
+            dirname = os.path.dirname(data_output_path)
+            if not os.path.exists(dirname):
+                os.makedirs(dirname)
             with open(data_output_path, 'wb') as data_out:
                 np.save(data_out, data)
         if code_output_path:
             print_stderr('Saving source...')
+            # create directory if not existing
+            dirname = os.path.dirname(code_output_path)
+            if not os.path.exists(dirname):
+                os.makedirs(dirname)
             with open(code_output_path, 'wb') as src_out:
                 src_out.write(transformer.transform_source())
         print_stderr('Done.')
